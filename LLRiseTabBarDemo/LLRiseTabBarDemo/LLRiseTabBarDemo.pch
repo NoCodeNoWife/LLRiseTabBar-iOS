@@ -1,0 +1,22 @@
+//
+//  LLRiseTabBarDemo.pch
+//  LLRiseTabBarDemo
+//
+//  Created by HelloWorld on 10/18/15.
+//  Copyright © 2015 melody. All rights reserved.
+//
+
+#ifndef LLRiseTabBarDemo_pch
+#define LLRiseTabBarDemo_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+// 屏幕高度
+#define SCREEN_HEIGHT         [[UIScreen mainScreen] bounds].size.height
+// 屏幕宽度
+#define SCREEN_WIDTH          [[UIScreen mainScreen] bounds].size.width
+
+
+
+#endif /* LLRiseTabBarDemo_pch */
