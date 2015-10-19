@@ -13,12 +13,12 @@
 ### 官方 App 截图：
 ![官方 App 截图](https://github.com/NoCodeNoWife/LLRiseTabBar-iOS/blob/master/Screenshot/Official.png)
 
-### 项目截图：
-![]()
+### 项目 Gif 图：
+![](https://github.com/NoCodeNoWife/LLRiseTabBar-iOS/blob/master/Screenshot/llrisedemo.gif)
 
 ## 0x03 瑕疵
 当点击同城的时候，按钮会有变暗的效果，经过测试，发现是跟图片有关系：
-![]()
+![](https://github.com/NoCodeNoWife/LLRiseTabBar-iOS/blob/master/Screenshot/flaw.png)
 
 ## 0x04 Requirements
 - iOS 7.0+
