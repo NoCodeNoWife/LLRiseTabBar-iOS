@@ -1,4 +1,4 @@
-# LLRiseTabBar
+# LLRiseTabBar-iOS
 仿淘宝闲鱼的TabBar (Objective-C 实现)
 
 ## 0x00 为什么做这个
@@ -20,4 +20,4 @@
 - iPhone5S(8.3) 真机
 
 ## License
-LLRiseTabBar is available under the MIT license. See the LICENSE file for more info.
+LLRiseTabBar-iOS is available under the MIT license. See the LICENSE file for more info.
