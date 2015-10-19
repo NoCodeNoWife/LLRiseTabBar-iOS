@@ -23,8 +23,11 @@
 ![](https://github.com/NoCodeNoWife/LLRiseTabBar-iOS/blob/master/Screenshot/llrisedemo.gif)
 
 ## 0x03 瑕疵
-当点击同城的时候，按钮会有变暗的效果，经过测试，发现是跟图片有关系：
+- 当点击同城的时候，按钮会有变暗的效果，经过测试，发现是跟图片有关系：
+
 ![](https://github.com/NoCodeNoWife/LLRiseTabBar-iOS/blob/master/Screenshot/flaw.png)
+
+- 因为 LLTabBarItem 是继承自 UIButton 的，在设置了 ViewController 的 tabBarItem 之后，在系统的 UITabBar 中生成的实际上是 UITabBarButton(通过 Reveal 看到的)，而 UITabBarButton 是继承自 UIControl 的，所以和继承 UIButton 的效果有所差别，并没有和系统的 UITabBar效果一样。感兴趣的可以继承 UIControl 试试看。
 
 ## 0x04 Requirements
 - iOS 7.0+
