@@ -13,7 +13,11 @@
 ### 官方 App 截图：
 ![官方 App 截图](https://github.com/NoCodeNoWife/LLRiseTabBar-iOS/blob/master/Screenshot/Official.png)
 
-### 项目 Gif 图：
+### 项目截图：
+- PNG:
+![](https://github.com/NoCodeNoWife/LLRiseTabBar-iOS/blob/master/Screenshot/LLRiseTabBar-iOS.png)
+
+- GIF:
 ![](https://github.com/NoCodeNoWife/LLRiseTabBar-iOS/blob/master/Screenshot/llrisedemo.gif)
 
 ## 0x03 瑕疵
