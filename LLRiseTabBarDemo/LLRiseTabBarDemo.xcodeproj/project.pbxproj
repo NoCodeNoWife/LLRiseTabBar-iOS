@@ -96,7 +96,6 @@
 		820978E61BD3A37600CF9D0C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				827809381BD3D3180096F95C /* TabBarIcon */,
 				820978E71BD3A37600CF9D0C /* main.m */,
 				820978F71BD3A37700CF9D0C /* Info.plist */,
 				827809371BD3CB7B0096F95C /* LLRiseTabBarDemo.pch */,
@@ -198,13 +197,6 @@
 				8209792A1BD3C1ED00CF9D0C /* LLTabBarItem.m */,
 			);
 			path = LLTabBar;
-			sourceTree = "<group>";
-		};
-		827809381BD3D3180096F95C /* TabBarIcon */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TabBarIcon;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

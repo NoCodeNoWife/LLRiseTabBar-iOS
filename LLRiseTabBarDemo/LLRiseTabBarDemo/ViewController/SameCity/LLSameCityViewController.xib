@@ -15,19 +15,60 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="同城" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNc-kU-x1E">
-                    <rect key="frame" x="283" y="290" width="34" height="20.5"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="62B-HC-D43" userLabel="Content View">
+                    <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="同城" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTk-Dx-Pvm">
+                            <rect key="frame" x="282" y="258" width="36" height="22"/>
+                            <animations/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
                     <animations/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="XTk-Dx-Pvm" firstAttribute="centerY" secondItem="62B-HC-D43" secondAttribute="centerY" id="02c-bf-SXt"/>
+                        <constraint firstItem="XTk-Dx-Pvm" firstAttribute="centerX" secondItem="62B-HC-D43" secondAttribute="centerX" id="IUp-Tm-Qvp"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jfj-9P-JpW">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="同城" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Top-rL-2SM">
+                            <rect key="frame" x="60" y="20" width="480" height="44"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="nZc-hM-TaG"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <animations/>
+                    <color key="backgroundColor" red="0.99215686270000003" green="0.83921568629999999" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="3wz-Af-CQP"/>
+                        <constraint firstItem="Top-rL-2SM" firstAttribute="leading" secondItem="Jfj-9P-JpW" secondAttribute="leading" constant="60" id="Jfa-wv-rCl"/>
+                        <constraint firstAttribute="bottom" secondItem="Top-rL-2SM" secondAttribute="bottom" id="drf-l7-BTu"/>
+                        <constraint firstAttribute="trailing" secondItem="Top-rL-2SM" secondAttribute="trailing" constant="60" id="wLm-hh-hmq"/>
+                    </constraints>
+                </view>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="bNc-kU-x1E" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="P3y-3d-6NB"/>
-                <constraint firstItem="bNc-kU-x1E" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="gJc-Gn-581"/>
+                <constraint firstItem="Jfj-9P-JpW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="4Hi-io-D9L"/>
+                <constraint firstAttribute="trailing" secondItem="Jfj-9P-JpW" secondAttribute="trailing" id="JyN-5j-X8n"/>
+                <constraint firstItem="62B-HC-D43" firstAttribute="top" secondItem="Jfj-9P-JpW" secondAttribute="bottom" id="OXv-XK-zvf"/>
+                <constraint firstItem="62B-HC-D43" firstAttribute="top" secondItem="Jfj-9P-JpW" secondAttribute="bottom" id="OZ8-rJ-t9o"/>
+                <constraint firstItem="62B-HC-D43" firstAttribute="top" secondItem="Jfj-9P-JpW" secondAttribute="bottom" id="TLF-Jz-xLV"/>
+                <constraint firstItem="62B-HC-D43" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Vw1-dk-OS2"/>
+                <constraint firstItem="Jfj-9P-JpW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="XAi-nb-9vu"/>
+                <constraint firstAttribute="bottom" secondItem="62B-HC-D43" secondAttribute="bottom" id="wIY-dx-V73"/>
+                <constraint firstAttribute="trailing" secondItem="62B-HC-D43" secondAttribute="trailing" id="zDP-Aq-j6D"/>
             </constraints>
         </view>
     </objects>

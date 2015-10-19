@@ -14,7 +14,7 @@
 #import "LLMessageViewController.h"
 #import "LLMineViewController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () <LLTabBarDelegate, UIActionSheetDelegate>
 
 @end
 
@@ -33,6 +33,9 @@
 	
 	UITabBarController *tabbarController = [[UITabBarController alloc] init];
 	tabbarController.viewControllers = @[homeViewController, sameCityViewController, messageViewController, mineViewController];
+	
+	[[UITabBar appearance] setBackgroundImage:[[UIImage alloc] init]];
+	[[UITabBar appearance] setShadowImage:[[UIImage alloc] init]];
 	
 	LLTabBar *tabBar = [[LLTabBar alloc] initWithFrame:tabbarController.tabBar.bounds];
 	
@@ -62,6 +65,7 @@
 									 selectedImageName:@"account_highlight" tabBarItemType:LLTabBarItemTypeNormal];
 	
 	tabBar.tabBarItems = @[homeItem, sameCityItem, publishItem, messageItem, mineItem];
+	tabBar.delegate = self;
 	
 	[tabbarController.tabBar addSubview:tabBar];
 	
@@ -79,12 +83,35 @@
 	UIImage *selectedImage = [UIImage imageNamed:selectedImageName];
 	[item setImage:normalImage forState:UIControlStateNormal];
 	[item setImage:selectedImage forState:UIControlStateSelected];
+	[item setImage:selectedImage forState:UIControlStateHighlighted];
 	[item setTitleColor:[UIColor colorWithWhite:51 / 255.0 alpha:1] forState:UIControlStateNormal];
 	[item setTitleColor:[UIColor colorWithWhite:51 / 255.0 alpha:1] forState:UIControlStateSelected];
 	item.tabBarItemType = tabBarItemType;
 	
 	return item;
 }
+
+#pragma mark - LLTabBarDelegate
+
+- (void)tabBarDidSelectedRiseButton {
+	UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+	UIViewController *viewController = tabBarController.selectedViewController;
+	
+	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil
+															 delegate:self
+													cancelButtonTitle:@"取消"
+											   destructiveButtonTitle:nil
+													otherButtonTitles:@"拍照", @"从相册选取", @"淘宝一键转卖", nil];
+	[actionSheet showInView:viewController.view];
+}
+
+#pragma mark - UIActionSheetDelegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
+	NSLog(@"buttonIndex = %ld", buttonIndex);
+}
+
+#pragma mark -
 
 - (void)applicationWillResignActive:(UIApplication *)application {
 	// Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

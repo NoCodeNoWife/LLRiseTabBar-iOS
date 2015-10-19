@@ -20,6 +20,6 @@
 
 @protocol LLTabBarDelegate <NSObject>
 
-- (void)tabBar:(LLTabBar *)tabBar didSelectAtIndex:(NSInteger *)index;
+- (void)tabBarDidSelectedRiseButton;
 
 @end
