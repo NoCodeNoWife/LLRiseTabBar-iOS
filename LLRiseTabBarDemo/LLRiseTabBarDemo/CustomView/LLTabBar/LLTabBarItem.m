@@ -8,20 +8,13 @@
 
 #import "LLTabBarItem.h"
 
-@interface LLTabBarItem () {
-//	UIImageView *iconImageView;
-}
-
-@end
-
 @implementation LLTabBarItem
 
 - (instancetype)initWithFrame:(CGRect)frame {
 	self = [super initWithFrame:frame];
 	
 	if (self) {
-		self.clipsToBounds = NO;
-//		self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+		[self config];
 	}
 	
 	return self;
@@ -31,7 +24,7 @@
 	self = [super init];
 	
 	if (self) {
-		self.clipsToBounds = NO;
+		[self config];
 	}
 	
 	return self;
@@ -41,42 +34,47 @@
 	self = [super initWithCoder:aDecoder];
 	
 	if (self) {
-		self.clipsToBounds = NO;
+		[self config];
 	}
 	
 	return self;
 }
 
-- (void)drawRect:(CGRect)rect {
-	
+- (void)config {
+	self.imageView.contentMode = UIViewContentModeScaleAspectFit;
 }
 
 - (void)layoutSubviews {
+	[super layoutSubviews];
+	
 	[self.titleLabel sizeToFit];
 	CGSize titleSize = self.titleLabel.frame.size;
 
-	CGPoint imageViewCenter = self.imageView.center;
-	imageViewCenter.x = CGRectGetWidth(self.frame) / 2;
-	imageViewCenter.y = (CGRectGetHeight(self.frame) - titleSize.height) / 2;
-	self.imageView.center = imageViewCenter;
+	CGSize imageSize = [self imageForState:UIControlStateNormal].size;
+	NSLog(@"itemImage.size = %@", NSStringFromCGSize(self.imageView.image.size));
+	if (imageSize.width != 0 && imageSize.height != 0) {
+		CGFloat imageViewCenterY = CGRectGetHeight(self.frame) - 3 - titleSize.height - imageSize.height / 2;
+		self.imageView.center = CGPointMake(CGRectGetWidth(self.frame) / 2, imageViewCenterY);
+	} else {
+		CGPoint imageViewCenter = self.imageView.center;
+		imageViewCenter.x = CGRectGetWidth(self.frame) / 2;
+		imageViewCenter.y = (CGRectGetHeight(self.frame) - titleSize.height) / 2;
+		self.imageView.center = imageViewCenter;
+	}
 	
-//	if (!iconImageView) {
-//		iconImageView = [[UIImageView alloc] initWithFrame:self.imageView.frame];
-//		self.imageView.hidden = YES;
-//	}
-//	iconImageView.image = self.imageView.image;
-//	iconImageView.center = imageViewCenter;
-//	[self addSubview:iconImageView];
-	
-	CGPoint labelCenter = CGPointMake(imageViewCenter.x, CGRectGetHeight(self.frame) - 3 - titleSize.height / 2);
+	CGPoint labelCenter = CGPointMake(CGRectGetWidth(self.frame) / 2, CGRectGetHeight(self.frame) - 3 - titleSize.height / 2);
 	self.titleLabel.center = labelCenter;
 	
-//	NSLog(@"self.imageView.frame.size = %@", NSStringFromCGSize(self.imageView.frame.size));
-//	NSLog(@"self.imageView.image.size = %@", NSStringFromCGSize(self.imageView.image.size));
-	
-	// 还有一种实现方式是设置 Edge Insets，不过还没试过，Xcode 7.0.1 好像有点不开心，在 IB 里面更改一下属性的时候，经常崩溃。。。
-	[self setTitleEdgeInsets:UIEdgeInsetsMake(36, -5, 3, 18)];
-	[self setImageEdgeInsets:UIEdgeInsetsMake(5, 18, 15, 18)];
+	// 还有一种实现方式是设置 Edge Insets，Xcode 7.0.1 好像有点不开心，在 IB 里面更改一下属性的时候，经常崩溃。。。
+	/*
+	 
+	 [self.titleLabel sizeToFit];
+	 CGSize titleSize = self.titleLabel.frame.size;
+	 NSInteger titleTopInset = CGRectGetHeight(self.frame) - 3 - titleSize.height;
+	 [self setTitleEdgeInsets:UIEdgeInsetsMake(titleTopInset, -5, 3, 18)];
+	 [self setImageEdgeInsets:UIEdgeInsetsMake(5, 18, 15, 18)];
+	 
+	 */
 }
 
 /*

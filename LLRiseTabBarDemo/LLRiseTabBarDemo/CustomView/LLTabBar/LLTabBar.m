@@ -22,16 +22,6 @@
 	return self;
 }
 
-#pragma mark - Parent Method
-
-//- (void)layoutSubviews {
-//	for (id item in _tabBarItems) {
-//		if ([item isKindOfClass:[UIView class]]) {
-//			[item layoutSubviews];
-//		}
-//	}
-//}
-
 #pragma mark - Private Method
 
 - (void)config {

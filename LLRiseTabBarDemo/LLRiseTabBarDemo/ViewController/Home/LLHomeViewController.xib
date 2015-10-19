@@ -75,63 +75,12 @@
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ytf-l4-9RK">
-                            <rect key="frame" x="8" y="8" width="60" height="24"/>
-                            <animations/>
-                            <state key="normal" title="首页" image="home_normal">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9sU-Ye-xNN">
-                            <rect key="frame" x="8" y="40" width="60" height="24"/>
-                            <animations/>
-                            <state key="normal" title="同城" image="mycity_normal">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGL-mX-gVt">
-                            <rect key="frame" x="8" y="72" width="100" height="57"/>
-                            <animations/>
-                            <state key="normal" title="发布" image="post_normal">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kmq-fG-i4Z">
-                            <rect key="frame" x="8" y="137" width="60" height="24"/>
-                            <animations/>
-                            <state key="normal" title="消息" image="message_normal">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNq-bI-TnE">
-                            <rect key="frame" x="8" y="169" width="60" height="24"/>
-                            <animations/>
-                            <state key="normal" title="我的" image="account_normal">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                        </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_normal" translatesAutoresizingMaskIntoConstraints="NO" id="MS6-vi-BX2">
-                            <rect key="frame" x="8" y="201" width="24" height="24"/>
-                            <animations/>
-                        </imageView>
                     </subviews>
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="MS6-vi-BX2" firstAttribute="leading" secondItem="gsc-Q9-e9b" secondAttribute="leading" constant="8" id="4kR-KQ-tKE"/>
-                        <constraint firstItem="Kmq-fG-i4Z" firstAttribute="top" secondItem="nGL-mX-gVt" secondAttribute="bottom" constant="8" id="7NK-Vv-hX3"/>
-                        <constraint firstItem="nGL-mX-gVt" firstAttribute="top" secondItem="9sU-Ye-xNN" secondAttribute="bottom" constant="8" id="7x6-DQ-4FQ"/>
-                        <constraint firstItem="MS6-vi-BX2" firstAttribute="top" secondItem="nNq-bI-TnE" secondAttribute="bottom" constant="8" id="N8I-6c-tHt"/>
-                        <constraint firstItem="9sU-Ye-xNN" firstAttribute="leading" secondItem="gsc-Q9-e9b" secondAttribute="leading" constant="8" id="WN3-nk-UEM"/>
-                        <constraint firstItem="ytf-l4-9RK" firstAttribute="leading" secondItem="gsc-Q9-e9b" secondAttribute="leading" constant="8" id="Zdh-HY-kyl"/>
                         <constraint firstItem="ZKM-BB-3LZ" firstAttribute="centerX" secondItem="gsc-Q9-e9b" secondAttribute="centerX" id="bKM-dl-vQH"/>
-                        <constraint firstItem="nNq-bI-TnE" firstAttribute="leading" secondItem="gsc-Q9-e9b" secondAttribute="leading" constant="8" id="fg4-va-OOa"/>
                         <constraint firstItem="ZKM-BB-3LZ" firstAttribute="centerY" secondItem="gsc-Q9-e9b" secondAttribute="centerY" id="h0S-7i-jW1"/>
-                        <constraint firstItem="9sU-Ye-xNN" firstAttribute="top" secondItem="ytf-l4-9RK" secondAttribute="bottom" constant="8" id="kHv-Us-Vw3"/>
-                        <constraint firstItem="Kmq-fG-i4Z" firstAttribute="leading" secondItem="gsc-Q9-e9b" secondAttribute="leading" constant="8" id="qeH-Qd-CEA"/>
-                        <constraint firstItem="nGL-mX-gVt" firstAttribute="leading" secondItem="gsc-Q9-e9b" secondAttribute="leading" constant="8" id="qq3-UE-Tir"/>
-                        <constraint firstItem="ytf-l4-9RK" firstAttribute="top" secondItem="gsc-Q9-e9b" secondAttribute="top" constant="8" id="yS8-C4-VlV"/>
-                        <constraint firstItem="nNq-bI-TnE" firstAttribute="top" secondItem="Kmq-fG-i4Z" secondAttribute="bottom" constant="8" id="ytH-76-1Q0"/>
                     </constraints>
                 </view>
             </subviews>
@@ -149,13 +98,8 @@
         </view>
     </objects>
     <resources>
-        <image name="account_normal" width="24" height="24"/>
         <image name="home_bar_scan" width="24" height="24"/>
-        <image name="home_normal" width="24" height="24"/>
         <image name="home_title_slogan" width="59" height="28"/>
         <image name="icon_search" width="24" height="24"/>
-        <image name="message_normal" width="24" height="24"/>
-        <image name="mycity_normal" width="24" height="24"/>
-        <image name="post_normal" width="64" height="57"/>
     </resources>
 </document>
