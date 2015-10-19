@@ -15,9 +15,9 @@
 未开发完，暂无。
 
 ## 编译测试环境
-Xcode 7.0.1 (7A1001)
-iPhone6(9.0) 模拟器
-iPhone5S(8.3) 真机
+- Xcode 7.0.1 (7A1001)
+- iPhone6(9.0) 模拟器
+- iPhone5S(8.3) 真机
 
 ## License
 LLRiseTabBar is available under the MIT license. See the LICENSE file for more info.
