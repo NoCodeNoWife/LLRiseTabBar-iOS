@@ -20,7 +20,7 @@
 	self = [super init];
 	
 	if (self) {
-		self.navigationController.navigationBar.hidden = YES;
+		
 	}
 	
 	return self;
@@ -30,7 +30,7 @@
 	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 	
 	if (self) {
-		self.navigationController.navigationBar.hidden = YES;
+		
 	}
 	
 	return self;
@@ -41,7 +41,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-	
+	self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {
