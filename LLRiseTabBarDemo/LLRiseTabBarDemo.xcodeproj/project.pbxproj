@@ -44,7 +44,6 @@
 		8209791C1BD3AFDB00CF9D0C /* LLSameCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSameCityViewController.h; sourceTree = "<group>"; };
 		8209791D1BD3AFDB00CF9D0C /* LLSameCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSameCityViewController.m; sourceTree = "<group>"; };
 		8209791E1BD3AFDB00CF9D0C /* LLSameCityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLSameCityViewController.xib; sourceTree = "<group>"; };
-		820979221BD3B11D00CF9D0C /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		820979261BD3B28700CF9D0C /* LLTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLTabBar.h; sourceTree = "<group>"; };
 		820979271BD3B28700CF9D0C /* LLTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLTabBar.m; sourceTree = "<group>"; };
 		820979291BD3C1ED00CF9D0C /* LLTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLTabBarItem.h; sourceTree = "<group>"; };
@@ -175,7 +174,6 @@
 		820979211BD3B0FE00CF9D0C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				820979221BD3B11D00CF9D0C /* Reveal.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -378,12 +376,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LLRiseTabBarDemo/LLRiseTabBarDemo.pch";
 				INFOPLIST_FILE = LLRiseTabBarDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-lz",
-					"-framework",
-					Reveal,
-				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.melody.LLRiseTabBarDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -401,12 +394,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LLRiseTabBarDemo/LLRiseTabBarDemo.pch";
 				INFOPLIST_FILE = LLRiseTabBarDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-lz",
-					"-framework",
-					Reveal,
-				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.melody.LLRiseTabBarDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
