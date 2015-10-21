@@ -26,7 +26,7 @@ Android 版在 [这里](https://github.com/NoCodeNoWife/LLRiseTabBar-Android)
 ![](https://github.com/NoCodeNoWife/LLRiseTabBar-iOS/blob/master/Screenshot/llrisedemo.gif)
 
 ## 0x03 瑕疵
-- 当点击同城的时候，按钮会有变暗的效果，经过测试，发现是跟图片有关系：
+- ~~当点击同城的时候，按钮会有变暗的效果，经过测试，发现是跟图片有关系~~ ([@devtofu](https://github.com/devtofu) 给出了 [解决办法](https://github.com/NoCodeNoWife/LLRiseTabBar-iOS/issues/1))：
 
 ![](https://github.com/NoCodeNoWife/LLRiseTabBar-iOS/blob/master/Screenshot/flaw.png)
 
