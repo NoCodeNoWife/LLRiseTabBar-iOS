@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSUInteger, LLTabBarItemType) {
-	LLTabBarItemTypeNormal = 0,
-	LLTabBarItemTypeRise,
+	LLTabBarItemNormal = 0,
+	LLTabBarItemRise,
 };
 
 @interface LLTabBarItem : UIButton
