@@ -51,7 +51,7 @@
 #pragma mark - Touch Event
 
 - (void)itemSelected:(LLTabBarItem *)sender {
-	if (sender.tabBarItemType != LLTabBarItemTypeRise) {
+	if (sender.tabBarItemType != LLTabBarItemRise) {
 		[self setSelectedIndex:sender.tag];
 	} else {
 		if (self.delegate) {
@@ -74,7 +74,7 @@
 			}
 			[((LLTabBarItem *)item) addTarget:self action:@selector(itemSelected:) forControlEvents:UIControlEventTouchDown];
 			[self addSubview:item];
-			if (((LLTabBarItem *)item).tabBarItemType != LLTabBarItemTypeRise) {
+			if (((LLTabBarItem *)item).tabBarItemType != LLTabBarItemRise) {
 				((LLTabBarItem *)item).tag = itemTag;
 				itemTag++;
 			}
