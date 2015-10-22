@@ -79,6 +79,15 @@
 	 */
 }
 
+
+/**
+ *  复写系统的高量实现，禁止按钮高亮
+ *  此函数里不用写任何代码
+ */
+- (void)setHighlighted:(BOOL)highlighted{
+  // do not anything  
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
