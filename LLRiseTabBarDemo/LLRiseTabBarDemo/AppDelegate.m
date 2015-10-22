@@ -46,23 +46,23 @@
 	LLTabBarItem *homeItem = [self tabBarItemWithFrame:CGRectMake(0, 0, normalButtonWidth, tabBarHeight)
 												 title:@"首页"
 									   normalImageName:@"home_normal"
-									 selectedImageName:@"home_highlight" tabBarItemType:LLTabBarItemTypeNormal];
+									 selectedImageName:@"home_highlight" tabBarItemType:LLTabBarItemNormal];
 	LLTabBarItem *sameCityItem = [self tabBarItemWithFrame:CGRectMake(normalButtonWidth, 0, normalButtonWidth, tabBarHeight)
 													 title:@"同城"
 										   normalImageName:@"mycity_normal"
-										 selectedImageName:@"mycity_highlight" tabBarItemType:LLTabBarItemTypeNormal];
+										 selectedImageName:@"mycity_highlight" tabBarItemType:LLTabBarItemNormal];
 	LLTabBarItem *publishItem = [self tabBarItemWithFrame:CGRectMake(normalButtonWidth * 2, 0, publishItemWidth, tabBarHeight)
 													title:@"发布"
 										  normalImageName:@"post_normal"
-										selectedImageName:@"post_normal" tabBarItemType:LLTabBarItemTypeRise];
+										selectedImageName:@"post_normal" tabBarItemType:LLTabBarItemRise];
 	LLTabBarItem *messageItem = [self tabBarItemWithFrame:CGRectMake(normalButtonWidth * 2 + publishItemWidth, 0, normalButtonWidth, tabBarHeight)
 													title:@"消息"
 										  normalImageName:@"message_normal"
-										selectedImageName:@"message_highlight" tabBarItemType:LLTabBarItemTypeNormal];
+										selectedImageName:@"message_highlight" tabBarItemType:LLTabBarItemNormal];
 	LLTabBarItem *mineItem = [self tabBarItemWithFrame:CGRectMake(normalButtonWidth * 3 + publishItemWidth, 0, normalButtonWidth, tabBarHeight)
 												 title:@"我的"
 									   normalImageName:@"account_normal"
-									 selectedImageName:@"account_highlight" tabBarItemType:LLTabBarItemTypeNormal];
+									 selectedImageName:@"account_highlight" tabBarItemType:LLTabBarItemNormal];
 	
 	tabBar.tabBarItems = @[homeItem, sameCityItem, publishItem, messageItem, mineItem];
 	tabBar.delegate = self;
