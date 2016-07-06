@@ -2,12 +2,17 @@
 //  LLTabBar.m
 //  LLRiseTabBarDemo
 //
-//  Created by HelloWorld on 10/18/15.
-//  Copyright © 2015 melody. All rights reserved.
+//  Created by Meilbn on 10/18/15.
+//  Copyright © 2015 meilbn. All rights reserved.
 //
 
 #import "LLTabBar.h"
-#import "LLTabBarItem.h"
+
+@interface LLTabBar ()
+
+@property (strong, nonatomic) NSMutableArray *tabBarItems;
+
+@end
 
 @implementation LLTabBar
 
@@ -64,30 +69,65 @@
 
 #pragma mark - Setter
 
-- (void)setTabBarItems:(NSArray *)tabBarItems {
-	_tabBarItems = tabBarItems;
+- (void)setTabBarItemAttributes:(NSArray<NSDictionary *> *)tabBarItemAttributes {
+	_tabBarItemAttributes = tabBarItemAttributes.copy;
+    
+    NSAssert(_tabBarItemAttributes.count > 2, @"TabBar item count must greet than two.");
+    
+    CGFloat normalItemWidth = (SCREEN_WIDTH * 3 / 4) / (_tabBarItemAttributes.count - 1);
+    CGFloat tabBarHeight = CGRectGetHeight(self.frame);
+    CGFloat publishItemWidth = (SCREEN_WIDTH / 4);
+    
 	NSInteger itemTag = 0;
-	for (id item in tabBarItems) {
-		if ([item isKindOfClass:[LLTabBarItem class]]) {
+    BOOL passedRiseItem = NO;
+    
+    _tabBarItems = [NSMutableArray arrayWithCapacity:_tabBarItemAttributes.count];
+    
+	for (id item in _tabBarItemAttributes) {
+		if ([item isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *itemDict = (NSDictionary *)item;
+            
+            LLTabBarItemType type = [itemDict[kLLTabBarItemAttributeType] integerValue];
+            
+            CGRect frame = CGRectMake(itemTag * normalItemWidth + (passedRiseItem ? publishItemWidth : 0), 0, type == LLTabBarItemRise ? publishItemWidth : normalItemWidth, tabBarHeight);
+            
+            LLTabBarItem *tabBarItem = [self tabBarItemWithFrame:frame
+                                                         title:itemDict[kLLTabBarItemAttributeTitle]
+                                               normalImageName:itemDict[kLLTabBarItemAttributeNormalImageName]
+                                             selectedImageName:itemDict[kLLTabBarItemAttributeSelectedImageName] tabBarItemType:type];
 			if (itemTag == 0) {
-				((LLTabBarItem *)item).selected = YES;
+				tabBarItem.selected = YES;
 			}
-			[((LLTabBarItem *)item) addTarget:self action:@selector(itemSelected:) forControlEvents:UIControlEventTouchDown];
-			[self addSubview:item];
-			if (((LLTabBarItem *)item).tabBarItemType != LLTabBarItemRise) {
-				((LLTabBarItem *)item).tag = itemTag;
-				itemTag++;
-			}
+            
+			[tabBarItem addTarget:self action:@selector(itemSelected:) forControlEvents:UIControlEventTouchUpInside];
+            
+            if (tabBarItem.tabBarItemType != LLTabBarItemRise) {
+                tabBarItem.tag = itemTag;
+                itemTag++;
+            } else {
+                passedRiseItem = YES;
+            }
+            
+            [_tabBarItems addObject:tabBarItem];
+			[self addSubview:tabBarItem];
 		}
 	}
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (LLTabBarItem *)tabBarItemWithFrame:(CGRect)frame title:(NSString *)title normalImageName:(NSString *)normalImageName selectedImageName:(NSString *)selectedImageName tabBarItemType:(LLTabBarItemType)tabBarItemType {
+    LLTabBarItem *item = [[LLTabBarItem alloc] initWithFrame:frame];
+    [item setTitle:title forState:UIControlStateNormal];
+    [item setTitle:title forState:UIControlStateSelected];
+    item.titleLabel.font = [UIFont systemFontOfSize:8];
+    UIImage *normalImage = [UIImage imageNamed:normalImageName];
+    UIImage *selectedImage = [UIImage imageNamed:selectedImageName];
+    [item setImage:normalImage forState:UIControlStateNormal];
+    [item setImage:selectedImage forState:UIControlStateSelected];
+    [item setTitleColor:[UIColor colorWithWhite:51 / 255.0 alpha:1] forState:UIControlStateNormal];
+    [item setTitleColor:[UIColor colorWithWhite:51 / 255.0 alpha:1] forState:UIControlStateSelected];
+    item.tabBarItemType = tabBarItemType;
+    
+    return item;
 }
-*/
 
 @end

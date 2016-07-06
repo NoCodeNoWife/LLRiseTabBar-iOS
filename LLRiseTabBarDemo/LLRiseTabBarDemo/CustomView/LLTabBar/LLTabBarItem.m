@@ -2,11 +2,16 @@
 //  LLTabBarItem.m
 //  LLRiseTabBarDemo
 //
-//  Created by HelloWorld on 10/18/15.
-//  Copyright © 2015 melody. All rights reserved.
+//  Created by Meilbn on 10/18/15.
+//  Copyright © 2015 meilbn. All rights reserved.
 //
 
 #import "LLTabBarItem.h"
+
+NSString *const kLLTabBarItemAttributeTitle = @"LLTabBarItemAttributeTitle";
+NSString *const kLLTabBarItemAttributeNormalImageName = @"LLTabBarItemAttributeNormalImageName";
+NSString *const kLLTabBarItemAttributeSelectedImageName = @"LLTabBarItemAttributeSelectedImageName";
+NSString *const kLLTabBarItemAttributeType = @"LLTabBarItemAttributeType";
 
 @implementation LLTabBarItem
 
@@ -79,12 +84,12 @@
 	 */
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+/**
+ *  复写系统的高量实现，禁止按钮高亮
+ *  此函数里不用写任何代码
+ */
+- (void)setHighlighted:(BOOL)highlighted{
+    // do not anything
 }
-*/
 
 @end

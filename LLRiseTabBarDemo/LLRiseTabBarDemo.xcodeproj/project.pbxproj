@@ -10,17 +10,17 @@
 		820978E81BD3A37600CF9D0C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 820978E71BD3A37600CF9D0C /* main.m */; };
 		820978EB1BD3A37700CF9D0C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 820978EA1BD3A37700CF9D0C /* AppDelegate.m */; };
 		820978F31BD3A37700CF9D0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 820978F21BD3A37700CF9D0C /* Assets.xcassets */; };
-		820979071BD3AA9400CF9D0C /* LLBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 820979061BD3AA9400CF9D0C /* LLBaseViewController.m */; settings = {ASSET_TAGS = (); }; };
-		820979101BD3AB2800CF9D0C /* LLHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8209790E1BD3AB2800CF9D0C /* LLHomeViewController.m */; settings = {ASSET_TAGS = (); }; };
-		820979111BD3AB2800CF9D0C /* LLHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8209790F1BD3AB2800CF9D0C /* LLHomeViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		820979151BD3AEA800CF9D0C /* LLMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 820979131BD3AEA800CF9D0C /* LLMessageViewController.m */; settings = {ASSET_TAGS = (); }; };
-		820979161BD3AEA800CF9D0C /* LLMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 820979141BD3AEA800CF9D0C /* LLMessageViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		8209791A1BD3AFAC00CF9D0C /* LLMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 820979181BD3AFAC00CF9D0C /* LLMineViewController.m */; settings = {ASSET_TAGS = (); }; };
-		8209791B1BD3AFAC00CF9D0C /* LLMineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 820979191BD3AFAC00CF9D0C /* LLMineViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		8209791F1BD3AFDB00CF9D0C /* LLSameCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8209791D1BD3AFDB00CF9D0C /* LLSameCityViewController.m */; settings = {ASSET_TAGS = (); }; };
-		820979201BD3AFDB00CF9D0C /* LLSameCityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8209791E1BD3AFDB00CF9D0C /* LLSameCityViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		820979281BD3B28700CF9D0C /* LLTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 820979271BD3B28700CF9D0C /* LLTabBar.m */; settings = {ASSET_TAGS = (); }; };
-		8209792B1BD3C1ED00CF9D0C /* LLTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8209792A1BD3C1ED00CF9D0C /* LLTabBarItem.m */; settings = {ASSET_TAGS = (); }; };
+		820979071BD3AA9400CF9D0C /* LLBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 820979061BD3AA9400CF9D0C /* LLBaseViewController.m */; };
+		820979101BD3AB2800CF9D0C /* LLHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8209790E1BD3AB2800CF9D0C /* LLHomeViewController.m */; };
+		820979111BD3AB2800CF9D0C /* LLHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8209790F1BD3AB2800CF9D0C /* LLHomeViewController.xib */; };
+		820979151BD3AEA800CF9D0C /* LLMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 820979131BD3AEA800CF9D0C /* LLMessageViewController.m */; };
+		820979161BD3AEA800CF9D0C /* LLMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 820979141BD3AEA800CF9D0C /* LLMessageViewController.xib */; };
+		8209791A1BD3AFAC00CF9D0C /* LLMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 820979181BD3AFAC00CF9D0C /* LLMineViewController.m */; };
+		8209791B1BD3AFAC00CF9D0C /* LLMineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 820979191BD3AFAC00CF9D0C /* LLMineViewController.xib */; };
+		8209791F1BD3AFDB00CF9D0C /* LLSameCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8209791D1BD3AFDB00CF9D0C /* LLSameCityViewController.m */; };
+		820979201BD3AFDB00CF9D0C /* LLSameCityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8209791E1BD3AFDB00CF9D0C /* LLSameCityViewController.xib */; };
+		820979281BD3B28700CF9D0C /* LLTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 820979271BD3B28700CF9D0C /* LLTabBar.m */; };
+		8209792B1BD3C1ED00CF9D0C /* LLTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8209792A1BD3C1ED00CF9D0C /* LLTabBarItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -377,7 +377,7 @@
 				INFOPLIST_FILE = LLRiseTabBarDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.melody.LLRiseTabBarDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.meilbn.LLRiseTabBarDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -395,7 +395,7 @@
 				INFOPLIST_FILE = LLRiseTabBarDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.melody.LLRiseTabBarDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.meilbn.LLRiseTabBarDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

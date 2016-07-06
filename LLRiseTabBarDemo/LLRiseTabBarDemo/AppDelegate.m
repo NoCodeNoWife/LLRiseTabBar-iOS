@@ -2,13 +2,12 @@
 //  AppDelegate.m
 //  LLRiseTabBarDemo
 //
-//  Created by HelloWorld on 10/18/15.
-//  Copyright © 2015 melody. All rights reserved.
+//  Created by Meilbn on 10/18/15.
+//  Copyright © 2015 meilbn. All rights reserved.
 //
 
 #import "AppDelegate.h"
 #import "LLTabBar.h"
-#import "LLTabBarItem.h"
 #import "LLHomeViewController.h"
 #import "LLSameCityViewController.h"
 #import "LLMessageViewController.h"
@@ -38,57 +37,17 @@
 	[[UITabBar appearance] setShadowImage:[[UIImage alloc] init]];
 	
 	LLTabBar *tabBar = [[LLTabBar alloc] initWithFrame:tabbarController.tabBar.bounds];
-	
-	CGFloat normalButtonWidth = (SCREEN_WIDTH * 3 / 4) / 4;
-	CGFloat tabBarHeight = CGRectGetHeight(tabBar.frame);
-	CGFloat publishItemWidth = (SCREEN_WIDTH / 4);
-	
-	LLTabBarItem *homeItem = [self tabBarItemWithFrame:CGRectMake(0, 0, normalButtonWidth, tabBarHeight)
-												 title:@"首页"
-									   normalImageName:@"home_normal"
-									 selectedImageName:@"home_highlight" tabBarItemType:LLTabBarItemNormal];
-	LLTabBarItem *sameCityItem = [self tabBarItemWithFrame:CGRectMake(normalButtonWidth, 0, normalButtonWidth, tabBarHeight)
-													 title:@"同城"
-										   normalImageName:@"mycity_normal"
-										 selectedImageName:@"mycity_highlight" tabBarItemType:LLTabBarItemNormal];
-	LLTabBarItem *publishItem = [self tabBarItemWithFrame:CGRectMake(normalButtonWidth * 2, 0, publishItemWidth, tabBarHeight)
-													title:@"发布"
-										  normalImageName:@"post_normal"
-										selectedImageName:@"post_normal" tabBarItemType:LLTabBarItemRise];
-	LLTabBarItem *messageItem = [self tabBarItemWithFrame:CGRectMake(normalButtonWidth * 2 + publishItemWidth, 0, normalButtonWidth, tabBarHeight)
-													title:@"消息"
-										  normalImageName:@"message_normal"
-										selectedImageName:@"message_highlight" tabBarItemType:LLTabBarItemNormal];
-	LLTabBarItem *mineItem = [self tabBarItemWithFrame:CGRectMake(normalButtonWidth * 3 + publishItemWidth, 0, normalButtonWidth, tabBarHeight)
-												 title:@"我的"
-									   normalImageName:@"account_normal"
-									 selectedImageName:@"account_highlight" tabBarItemType:LLTabBarItemNormal];
-	
-	tabBar.tabBarItems = @[homeItem, sameCityItem, publishItem, messageItem, mineItem];
+    tabBar.tabBarItemAttributes = @[@{kLLTabBarItemAttributeTitle : @"首页", kLLTabBarItemAttributeNormalImageName : @"home_normal", kLLTabBarItemAttributeSelectedImageName : @"home_highlight", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)},
+                                    @{kLLTabBarItemAttributeTitle : @"同城", kLLTabBarItemAttributeNormalImageName : @"mycity_normal", kLLTabBarItemAttributeSelectedImageName : @"mycity_highlight", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)},
+                                    @{kLLTabBarItemAttributeTitle : @"发布", kLLTabBarItemAttributeNormalImageName : @"post_normal", kLLTabBarItemAttributeSelectedImageName : @"post_normal", kLLTabBarItemAttributeType : @(LLTabBarItemRise)},
+                                    @{kLLTabBarItemAttributeTitle : @"消息", kLLTabBarItemAttributeNormalImageName : @"message_normal", kLLTabBarItemAttributeSelectedImageName : @"message_highlight", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)},
+                                    @{kLLTabBarItemAttributeTitle : @"我的", kLLTabBarItemAttributeNormalImageName : @"account_normal", kLLTabBarItemAttributeSelectedImageName : @"account_highlight", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)}];
 	tabBar.delegate = self;
-	
 	[tabbarController.tabBar addSubview:tabBar];
 	
 	self.window.rootViewController = tabbarController;
 	
 	return YES;
-}
-
-- (LLTabBarItem *)tabBarItemWithFrame:(CGRect)frame title:(NSString *)title normalImageName:(NSString *)normalImageName selectedImageName:(NSString *)selectedImageName tabBarItemType:(LLTabBarItemType)tabBarItemType {
-	LLTabBarItem *item = [[LLTabBarItem alloc] initWithFrame:frame];
-	[item setTitle:title forState:UIControlStateNormal];
-	[item setTitle:title forState:UIControlStateSelected];
-	item.titleLabel.font = [UIFont systemFontOfSize:8];
-	UIImage *normalImage = [UIImage imageNamed:normalImageName];
-	UIImage *selectedImage = [UIImage imageNamed:selectedImageName];
-	[item setImage:normalImage forState:UIControlStateNormal];
-	[item setImage:selectedImage forState:UIControlStateSelected];
-	[item setImage:selectedImage forState:UIControlStateHighlighted];
-	[item setTitleColor:[UIColor colorWithWhite:51 / 255.0 alpha:1] forState:UIControlStateNormal];
-	[item setTitleColor:[UIColor colorWithWhite:51 / 255.0 alpha:1] forState:UIControlStateSelected];
-	item.tabBarItemType = tabBarItemType;
-	
-	return item;
 }
 
 #pragma mark - LLTabBarDelegate
