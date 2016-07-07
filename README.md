@@ -32,6 +32,21 @@ Android 版在 [这里](https://github.com/NoCodeNoWife/LLRiseTabBar-Android)
 
 - 因为 LLTabBarItem 是继承自 UIButton 的，在设置了 ViewController 的 tabBarItem 之后，在系统的 UITabBar 中生成的实际上是 UITabBarButton(通过 Reveal 看到的)，而 UITabBarButton 是继承自 UIControl 的，所以和继承 UIButton 的效果有所差别，并没有和系统的 UITabBar 效果一样。感兴趣的可以继承 UIControl 试试看。
 
+## Usage
+``` Objective-C
+UITabBarController *tabBarController = [[UITabBarController alloc] init];
+tabBarController.viewControllers = @[...];
+
+LLTabBar *tabBar = [[LLTabBar alloc] initWithFrame:tabBarController.tabBar.bounds];
+tabBar.tabBarItemAttributes = @[@{kLLTabBarItemAttributeTitle : @"首页", kLLTabBarItemAttributeNormalImageName : @"home_normal", kLLTabBarItemAttributeSelectedImageName : @"home_highlight", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)},
+                                @{kLLTabBarItemAttributeTitle : @"同城", kLLTabBarItemAttributeNormalImageName : @"mycity_normal", kLLTabBarItemAttributeSelectedImageName : @"mycity_highlight", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)},
+                                @{kLLTabBarItemAttributeTitle : @"发布", kLLTabBarItemAttributeNormalImageName : @"post_normal", kLLTabBarItemAttributeSelectedImageName : @"post_normal", kLLTabBarItemAttributeType : @(LLTabBarItemRise)},
+                                @{kLLTabBarItemAttributeTitle : @"消息", kLLTabBarItemAttributeNormalImageName : @"message_normal", kLLTabBarItemAttributeSelectedImageName : @"message_highlight", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)},
+                                @{kLLTabBarItemAttributeTitle : @"我的", kLLTabBarItemAttributeNormalImageName : @"account_normal", kLLTabBarItemAttributeSelectedImageName : @"account_highlight", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)}];
+tabBar.delegate = self;
+[tabBarController.tabBar addSubview:tabBar];
+```
+
 ## 0x04 Requirements
 - iOS 7.0+
 
@@ -42,3 +57,4 @@ Android 版在 [这里](https://github.com/NoCodeNoWife/LLRiseTabBar-Android)
 
 ## License
 LLRiseTabBar-iOS is available under the MIT license. See the LICENSE file for more info.
+
