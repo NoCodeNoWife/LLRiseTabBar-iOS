@@ -29,6 +29,7 @@ Android 版在 [这里](https://github.com/NoCodeNoWife/LLRiseTabBar-Android)
 - ~~当点击同城的时候，按钮会有变暗的效果，经过测试，发现是跟图片有关系~~ ([@devtofu](https://github.com/devtofu) 给出了 [解决办法](https://github.com/NoCodeNoWife/LLRiseTabBar-iOS/issues/1))：
 
 /* -------------------- 2016-10-11 更新 -------------------- */
+
 其实不用覆写 ``setHighlighted:`` 方法，只要设置 UIButton 的 ``adjustsImageWhenHighlighted`` 为 ``NO`` 就可以了。
 
 ![](https://github.com/NoCodeNoWife/LLRiseTabBar-iOS/blob/master/Screenshot/flaw.png)
