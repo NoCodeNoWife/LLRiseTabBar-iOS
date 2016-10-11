@@ -46,6 +46,7 @@ NSString *const kLLTabBarItemAttributeType = @"LLTabBarItemAttributeType";
 }
 
 - (void)config {
+	self.adjustsImageWhenHighlighted = NO;
 	self.imageView.contentMode = UIViewContentModeScaleAspectFit;
 }
 
@@ -82,14 +83,6 @@ NSString *const kLLTabBarItemAttributeType = @"LLTabBarItemAttributeType";
 	[self setImageEdgeInsets:UIEdgeInsetsMake(CGRectGetHeight(self.frame) - 3 - 5 - titleSize.height - imageSize.height, imageViewLeftRightInset, 3 + 5 + titleSize.height, imageViewLeftRightInset)];
 	
 	 */
-}
-
-/**
- *  复写系统的高量实现，禁止按钮高亮
- *  此函数里不用写任何代码
- */
-- (void)setHighlighted:(BOOL)highlighted{
-    // do not anything
 }
 
 @end
