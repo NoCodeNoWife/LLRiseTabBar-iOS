@@ -28,6 +28,9 @@ Android 版在 [这里](https://github.com/NoCodeNoWife/LLRiseTabBar-Android)
 ## 0x03 瑕疵
 - ~~当点击同城的时候，按钮会有变暗的效果，经过测试，发现是跟图片有关系~~ ([@devtofu](https://github.com/devtofu) 给出了 [解决办法](https://github.com/NoCodeNoWife/LLRiseTabBar-iOS/issues/1))：
 
+/* -------------------- 2016-10-11 更新 -------------------- */
+其实不用覆写 ``setHighlighted:`` 方法，只要设置 UIButton 的 ``adjustsImageWhenHighlighted`` 为 ``NO`` 就可以了。
+
 ![](https://github.com/NoCodeNoWife/LLRiseTabBar-iOS/blob/master/Screenshot/flaw.png)
 
 - 因为 LLTabBarItem 是继承自 UIButton 的，在设置了 ViewController 的 tabBarItem 之后，在系统的 UITabBar 中生成的实际上是 UITabBarButton(通过 Reveal 看到的)，而 UITabBarButton 是继承自 UIControl 的，所以和继承 UIButton 的效果有所差别，并没有和系统的 UITabBar 效果一样。感兴趣的可以继承 UIControl 试试看。
