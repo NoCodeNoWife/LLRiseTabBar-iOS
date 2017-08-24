@@ -69,49 +69,83 @@
 
 #pragma mark - Setter
 
+//- (void)setTabBarItemAttributes:(NSArray<NSDictionary *> *)tabBarItemAttributes {
+//	_tabBarItemAttributes = tabBarItemAttributes.copy;
+//    
+//    NSAssert(_tabBarItemAttributes.count > 2, @"TabBar item count must greet than two.");
+//    
+//    CGFloat normalItemWidth = (SCREEN_WIDTH * 3 / 4) / (_tabBarItemAttributes.count - 1);
+//    CGFloat tabBarHeight = CGRectGetHeight(self.frame);
+//    CGFloat publishItemWidth = (SCREEN_WIDTH / 4);
+//    
+//	NSInteger itemTag = 0;
+//    BOOL passedRiseItem = NO;
+//    
+//    _tabBarItems = [NSMutableArray arrayWithCapacity:_tabBarItemAttributes.count];
+//    
+//	for (id item in _tabBarItemAttributes) {
+//		if ([item isKindOfClass:[NSDictionary class]]) {
+//            NSDictionary *itemDict = (NSDictionary *)item;
+//            
+//            LLTabBarItemType type = [itemDict[kLLTabBarItemAttributeType] integerValue];
+//            
+//            CGRect frame = CGRectMake(itemTag * normalItemWidth + (passedRiseItem ? publishItemWidth : 0), 0, type == LLTabBarItemRise ? publishItemWidth : normalItemWidth, tabBarHeight);
+//            
+//            LLTabBarItem *tabBarItem = [self tabBarItemWithFrame:frame
+//                                                         title:itemDict[kLLTabBarItemAttributeTitle]
+//                                               normalImageName:itemDict[kLLTabBarItemAttributeNormalImageName]
+//                                             selectedImageName:itemDict[kLLTabBarItemAttributeSelectedImageName] tabBarItemType:type];
+//			if (itemTag == 0) {
+//				tabBarItem.selected = YES;
+//			}
+//            
+//			[tabBarItem addTarget:self action:@selector(itemSelected:) forControlEvents:UIControlEventTouchUpInside];
+//            
+//            if (tabBarItem.tabBarItemType != LLTabBarItemRise) {
+//                tabBarItem.tag = itemTag;
+//                itemTag++;
+//            } else {
+//                passedRiseItem = YES;
+//            }
+//            
+//            [_tabBarItems addObject:tabBarItem];
+//			[self addSubview:tabBarItem];
+//		}
+//	}
+//}
+
 - (void)setTabBarItemAttributes:(NSArray<NSDictionary *> *)tabBarItemAttributes {
-	_tabBarItemAttributes = tabBarItemAttributes.copy;
+    _tabBarItemAttributes = tabBarItemAttributes.copy;
     
-    NSAssert(_tabBarItemAttributes.count > 2, @"TabBar item count must greet than two.");
-    
-    CGFloat normalItemWidth = (SCREEN_WIDTH * 3 / 4) / (_tabBarItemAttributes.count - 1);
+    CGFloat itemWidth = SCREEN_WIDTH / _tabBarItemAttributes.count;
     CGFloat tabBarHeight = CGRectGetHeight(self.frame);
-    CGFloat publishItemWidth = (SCREEN_WIDTH / 4);
-    
-	NSInteger itemTag = 0;
-    BOOL passedRiseItem = NO;
+    NSInteger itemTag = 0;
     
     _tabBarItems = [NSMutableArray arrayWithCapacity:_tabBarItemAttributes.count];
-    
-	for (id item in _tabBarItemAttributes) {
-		if ([item isKindOfClass:[NSDictionary class]]) {
+    for (id item in _tabBarItemAttributes) {
+        if ([item isKindOfClass:[NSDictionary class]]) {
             NSDictionary *itemDict = (NSDictionary *)item;
             
             LLTabBarItemType type = [itemDict[kLLTabBarItemAttributeType] integerValue];
-            
-            CGRect frame = CGRectMake(itemTag * normalItemWidth + (passedRiseItem ? publishItemWidth : 0), 0, type == LLTabBarItemRise ? publishItemWidth : normalItemWidth, tabBarHeight);
+            CGRect frame = CGRectMake(itemTag * itemWidth, 0, itemWidth, tabBarHeight);
             
             LLTabBarItem *tabBarItem = [self tabBarItemWithFrame:frame
-                                                         title:itemDict[kLLTabBarItemAttributeTitle]
-                                               normalImageName:itemDict[kLLTabBarItemAttributeNormalImageName]
-                                             selectedImageName:itemDict[kLLTabBarItemAttributeSelectedImageName] tabBarItemType:type];
-			if (itemTag == 0) {
-				tabBarItem.selected = YES;
-			}
-            
-			[tabBarItem addTarget:self action:@selector(itemSelected:) forControlEvents:UIControlEventTouchUpInside];
-            
-            if (tabBarItem.tabBarItemType != LLTabBarItemRise) {
-                tabBarItem.tag = itemTag;
-                itemTag++;
-            } else {
-                passedRiseItem = YES;
+                                                           title:itemDict[kLLTabBarItemAttributeTitle]
+                                                 normalImageName:itemDict[kLLTabBarItemAttributeNormalImageName]
+                                               selectedImageName:itemDict[kLLTabBarItemAttributeSelectedImageName] tabBarItemType:type];
+            if (itemTag == 0) {
+                tabBarItem.selected = YES;
             }
             
+            [tabBarItem addTarget:self action:@selector(itemSelected:) forControlEvents:UIControlEventTouchUpInside];
+            
+            tabBarItem.tag = itemTag;
+            itemTag++;
+            
             [_tabBarItems addObject:tabBarItem];
-			[self addSubview:tabBarItem];
-		}
-	}
+            [self addSubview:tabBarItem];
+        }
+    }
 }
 
 - (LLTabBarItem *)tabBarItemWithFrame:(CGRect)frame title:(NSString *)title normalImageName:(NSString *)normalImageName selectedImageName:(NSString *)selectedImageName tabBarItemType:(LLTabBarItemType)tabBarItemType {
